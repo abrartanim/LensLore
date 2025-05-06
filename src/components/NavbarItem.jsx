@@ -17,7 +17,6 @@ export default function NavbarItem({ title, param }) {
       }`}
     >
       <Link href={`/?genre=${param}`}>{title}</Link>
-      {/* <Link href={`\?genre=${param}`}>{title}</Link> */}
     </div>
   );
 }
