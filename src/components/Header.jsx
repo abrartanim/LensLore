@@ -15,10 +15,10 @@ export default function Header() {
       <div className="flex gap-4 items-center">
         <DarkModeSwitch />
         <Link href={"/"} className="flex gap-1 items-center ">
-          <span className="text-2xl font-bold bg-amber-500 px-2 py-1 rounded-lg">
-            IMDB
+          <span className="text-2xl font-bold bg-purple-500 px-2 py-1 rounded-lg">
+            Lens
           </span>
-          <span className="text-xl  hidden sm:inline">Clone</span>
+          <span className="text-xl  hidden sm:inline">Lore</span>
         </Link>
       </div>
     </div>
