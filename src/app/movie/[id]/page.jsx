@@ -7,7 +7,7 @@ export default async function MoviePage({ params }) {
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`
   );
   const movie = await res.json();
-  console.log(movie);
+  // console.log(movie);
   return (
     <div className="w-full flex items-center">
       <div className="p-4 md:pt-8 flex flex-col md:flex-row items-center max-w-6xl mx-auto md:space-x-6">
@@ -17,7 +17,7 @@ export default async function MoviePage({ params }) {
           }`}
           width={500}
           height={300}
-          className="sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300"
+          className="sm:rounded-lg group-hover:opacity-75 transition-opacity duration-300"
           alt={movie.title || movie.name}
         ></Image>
 
@@ -26,11 +26,16 @@ export default async function MoviePage({ params }) {
             {movie.name || movie.title}
           </h2>
           <h3 className="text-xl">{movie.overview}</h3>
-          <p className="flex item-center py-2">
-            {movie.release_date || movie.first_air_date}
-            <FiThumbsUp className="h-5 ml-3 mr-1" />
-            {movie.vote_count}
-          </p>
+          <div className="flex-col items-center py-2">
+            <p>
+              <span className="font-bold">Release Date: </span>
+              {movie.release_date || movie.first_air_date}
+            </p>
+
+            <p>
+              <span className="font-bold">Upvotes: </span> {movie.vote_count}
+            </p>
+          </div>
         </div>
       </div>
     </div>

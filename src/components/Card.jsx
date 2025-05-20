@@ -16,7 +16,7 @@ export default function Card({ result }) {
           className="sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300"
           alt={result.title || result.name}
         ></Image>
-        <div>
+        <div className="items-center p-2">
           <p className="line-clamp-2">{result.overview}</p>
           <h2 className="text-lg text-purple-400">
             {result.name || result.title}
