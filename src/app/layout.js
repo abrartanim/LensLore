@@ -5,6 +5,7 @@ import Providers from "./Providers";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import SearchBar from "@/components/SearchBar";
+import React, { Suspense } from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,7 +37,9 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.variable} antialiased`}>
         <Providers>
           <Header />
-          <Navbar />
+          <Suspense fallback={<div>Loading navigation...</div>}>
+            <Navbar />
+          </Suspense>
           <SearchBar />
           {children}
         </Providers>
